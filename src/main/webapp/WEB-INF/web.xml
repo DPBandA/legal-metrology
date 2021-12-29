@@ -80,7 +80,7 @@
         <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>sc/index.xhtml</welcome-file>
+        <welcome-file>lm/index.xhtml</welcome-file>
     </welcome-file-list>   
 
 </web-app>
