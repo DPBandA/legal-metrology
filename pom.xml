@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jm.com.dpbennett</groupId>
-    <artifactId>standards-compliance</artifactId>
+    <artifactId>legal-metrology</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>Standards Compliance</name>
+    <name>Legal Metrology</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -85,5 +85,5 @@
             </plugin>
         </plugins>
     </build>
-    <description>An enterprise web application for standards compliance.</description>
+    <description>An enterprise web application for legal metrology.</description>
 </project>

@@ -61,7 +61,8 @@
             /WEB-INF/faces-config-fm.xml,
             /WEB-INF/faces-config-sc.xml,
             /WEB-INF/faces-config-hrm.xml,
-            /WEB-INF/faces-config-cm.xml
+            /WEB-INF/faces-config-cm.xml,
+            /WEB-INF/faces-config-lm.xml
         </param-value>
     </context-param>  
        
@@ -73,7 +74,7 @@
    
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/sc/*</url-pattern>
+        <url-pattern>/lm/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
