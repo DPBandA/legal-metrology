@@ -1,0 +1,169 @@
+<!--
+Standards Compliance (SC) 
+Copyright (C) 2020  D P Bennett & Associates Limited
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Email: info@dpbennett.com.jm
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+    <p:toolbar style="margin-bottom: 1px;">
+        <p:toolbarGroup align="left">
+            <p:menuButton value="New">   
+                <p:menuitem
+                    actionListener="#{complianceManager.createNewComplianceSurvey}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Survey"       
+                    update="headerForm:growl3"
+                    title="Add a new survey"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+                <p:separator />
+                <p:menuitem
+                    actionListener="#{complianceManager.createNewDocumentStandard}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Standard"       
+                    update="headerForm:growl3"
+                    title="Add a new standard"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+                <p:separator />
+                <p:menuitem
+                    actionListener="#{complianceManager.createNewComplaint}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Complaint"       
+                    update="headerForm:growl3"
+                    title="Add a new complaint"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+                <p:separator />
+                <p:menuitem
+                    actionListener="#{complianceManager.createNewMarketProduct}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Market Product"       
+                    update="headerForm:growl3"
+                    title="Add a new market product"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+                <p:separator />
+                <p:menuitem
+                    actionListener="#{humanResourceManager.createNewManufacturer}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Manufacturer"       
+                    update="headerForm:growl3"
+                    title="Add a new manufacturer"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+                <p:separator />
+                <p:menuitem
+                    actionListener="#{complianceManager.createNewFactoryInspection}"
+                    onstart="PF('longProcessDialogVar').show();"                 
+                    oncomplete="PF('longProcessDialogVar').hide();"
+                    value="Factory Inspection"       
+                    update="headerForm:growl3"
+                    title="Add a new factory inspection"
+                    icon="ui-icon-plus"
+                    process="@this" >
+
+                    <p:ajax event="dialogReturn" 
+                            update=":mainTabViewForm:mainTabView,:headerForm:growl3" />
+
+                </p:menuitem>
+
+            </p:menuButton>   
+
+        </p:toolbarGroup>
+        <p:toolbarGroup align="right">
+            <p:menuButton value="Tools" >  
+                <p:menuitem value="Surveys"
+                            onstart="PF('longProcessDialogVar').show();" 
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            actionListener="#{complianceManager.openSurveysBrowser}"   
+                            process="@this"/>                   
+                <p:separator />
+                <p:menuitem value="Standards"
+                            onstart="PF('longProcessDialogVar').show();"  
+                            actionListener="#{complianceManager.openStandardsBrowser}"
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            process="@this"/>
+                <p:separator />
+                <p:menuitem value="Complaints"
+                            onstart="PF('longProcessDialogVar').show();"  
+                            actionListener="#{complianceManager.openComplaintsBrowser}"
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            process="@this"/>
+                <p:separator />
+                <p:menuitem value="Market Products"
+                            onstart="PF('longProcessDialogVar').show();"  
+                            actionListener="#{complianceManager.openMarketProductBrowser}"
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            process="@this"/>
+                <p:separator />
+                <p:menuitem value="Manufacturers"
+                            onstart="PF('longProcessDialogVar').show();"  
+                            actionListener="#{complianceManager.openManufacturerBrowser}"
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            process="@this"/>
+                <p:separator />
+                <p:menuitem value="Factory Inspections"
+                            onstart="PF('longProcessDialogVar').show();"  
+                            actionListener="#{complianceManager.openFactoryInspectionBrowser}"
+                            oncomplete="PF('longProcessDialogVar').hide();"
+                            process="@this"/>
+
+            </p:menuButton>         
+        </p:toolbarGroup>
+    </p:toolbar>
+
+    <ui:remove>
+        <ui:include src="generalSearch.xhtml"/>   
+    </ui:remove>
+
+</html>
+
+
